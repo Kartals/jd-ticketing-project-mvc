@@ -6,13 +6,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.websocket.server.ServerEndpoint;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
-public class RoleDTO {
+public class RoleDTO { // DTO--> Data Transfer Object
 
     private Long id;
     private String description;
