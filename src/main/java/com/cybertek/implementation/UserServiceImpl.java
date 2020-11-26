@@ -2,9 +2,11 @@ package com.cybertek.implementation;
 
 import com.cybertek.dto.UserDTO;
 import com.cybertek.service.UserService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service // to make Bean
 public class UserServiceImpl extends AbstractMapService <UserDTO,String> implements UserService {
     @Override
     public List<UserDTO> findAll() {
