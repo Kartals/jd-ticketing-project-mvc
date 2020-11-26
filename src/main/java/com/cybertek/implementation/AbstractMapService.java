@@ -26,8 +26,8 @@ public abstract class AbstractMapService <T,ID>{
         map.remove(id);
     }
 
-    void delete(T Object){
-        map.entrySet().removeIf(entry ->entry.getValue().equals(Object));
+    void delete(T object){
+        map.entrySet().removeIf(entry ->entry.getValue().equals(object));
     }
 
 }
