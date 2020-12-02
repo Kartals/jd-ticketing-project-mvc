@@ -2,9 +2,11 @@ package com.cybertek.implementation;
 
 import com.cybertek.dto.ProjectDTO;
 import com.cybertek.service.ProjectService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ProjectServiceImpl  extends AbstractMapService<ProjectDTO,String> implements ProjectService {
     @Override
     public List<ProjectDTO> findAll() {
