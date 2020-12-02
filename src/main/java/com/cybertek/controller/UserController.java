@@ -38,11 +38,20 @@ public class UserController {
 
         userService.save(user);
 
+        /*
         model.addAttribute("user",new UserDTO());
         model.addAttribute("roles",roleService.findAll());
         model.addAttribute("users",userService.findAll());
 
         return "/user/create";
+        şimdii nstead of going to create.html (line 46), how about if I call the createUser method(line 27'deki method)
+        line 53'deki syntax ile line 27'deki methodu çağırıyoruz, çünkü line 29-31 ile line 41-42 arası aynı, dolayısıyla aiağıdaki syntax ile kodu sadeleleştirmiş oluyoruz
+        Tabi burada line 27 ile line 37'deki methodun aynı meydodlara sahip olması ve aynı aynı view'e /user/create gitmesi nedeiyle bunu yapabiliyoeuz. Nitekim aşağıdaki
+        line 70'deki updateUser içerisinde de aynı methodlar var ve yine aynı htlm view yapılmakta. Dolayısıyla onu da line 27'deki methodu çağırarak kısaltabiliriz.
+        Ancak, line 58'deki mthoda yapamayız, çünkü hem gittiği view farklı hem içerisindeki methodlar farklı.
+        */
+       return "redirect:/user/create";
+
     }
 
     @GetMapping("/update/{username}")
@@ -61,11 +70,22 @@ public class UserController {
     public String updateUser(@PathVariable("username") String username,UserDTO user, Model model){
 
         userService.update(user);
+        /*
         model.addAttribute("user",new UserDTO());
         model.addAttribute("roles",roleService.findAll());
         model.addAttribute("users",userService.findAll());
 
-
         return "/user/create";
+        */
+        return "redirect:/user/create";
     }
+
+    @GetMapping("/delete/{username}")
+    public String deleteUser(@PathVariable("username") String username){
+        userService.deleteById(username);
+        return "redirect:/user/create"; // yine böyle yaparak line 27'deki meyhodu çağırdık
+
+    }
+
+
 }
