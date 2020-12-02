@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 
@@ -18,8 +19,13 @@ public class ProjectDTO {
     private String projectName;
     private String projectCode;
     private UserDTO assignedManager;
+
+    @DateTimeFormat(pattern="yyyy-MM-dd") //Spring frameworkte olan bu annotation ile date (date örneğimizde String) to Object 'e convert ediliyor. Ancak pattern pass etmemiz gerekiyor.
     private LocalDate startDate;
+
+    @DateTimeFormat(pattern="yyyy-MM-dd")
     private LocalDate endDate;
+
     private String projectDetail;
     private Status projectStatus;
 }
