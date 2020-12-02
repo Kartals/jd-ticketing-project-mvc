@@ -45,7 +45,7 @@ public class UserController {
         return "/user/create";
     }
 
-    @GetMapping("/update{username}")
+    @GetMapping("/update/{username}")
     public String editUser(@PathVariable("username") String username, Model model){
 
         model.addAttribute("user",userService.findById(username));
@@ -57,7 +57,7 @@ public class UserController {
         return "/user/update";
     }
 
-    @PostMapping("/update{username}")
+    @PostMapping("/update/{username}")
     public String updateUser(@PathVariable("username") String username,UserDTO user, Model model){
 
         userService.update(user);
