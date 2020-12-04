@@ -2,9 +2,11 @@ package com.cybertek.implementation;
 
 import com.cybertek.dto.TaskDTO;
 import com.cybertek.service.TaskService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class TaskServiceImpl extends AbstractMapService<TaskDTO, Long> implements TaskService { //yine unique type Long olduğundan onu yazdık.
     @Override
     public List<TaskDTO> findAll() {
