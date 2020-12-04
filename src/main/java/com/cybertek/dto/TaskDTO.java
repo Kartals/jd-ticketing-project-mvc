@@ -17,7 +17,7 @@ import java.time.LocalDate;
 
 public class TaskDTO {
 
-    private Long id;
+    private Long id; // bunu yazmamızın sebebi bir id yi primary key olarak kullanmak
     private ProjectDTO project;
     private UserDTO assignedEmployee;
     private String taskSubject;
