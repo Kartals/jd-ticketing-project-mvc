@@ -50,9 +50,10 @@
                                             <div class="col">
                                                 <div class="form-group">
                                                     <label>Assigned Employee</label>
-                                                    <select class="custom-select" required="required">
-                                                        <option>Select</option>
-                                                        <option></option>
+                                                    <select th:field="*{assignedEmployee}"class="custom-select" required="required">
+                                                        <option th:value=" ''"  th:text="Select"></option>
+                                                        <option th:each="employee :${employees}" th:value="${employee.userName}"
+                                                                th:text="${employee.firstName +'-'+employee.lastName}"></option>
                                                     </select>
                                                     <div class="invalid-feedback">Please choose employee</div>
                                                 </div>
@@ -63,7 +64,7 @@
                                                 <div class="form-group">
                                                     <label class="col-form-label">Task Subject</label>
                                                     <input id="projectname" type="text" placeholder="task subject"
-                                                           class="form-control" required>
+                                                          th:field="*{taskSubject}" class="form-control" required>
                                                     <div class="invalid-feedback">Please enter task subject</div>
                                                 </div>
                                             </div>
@@ -72,7 +73,7 @@
                                             <div class="col">
                                                 <div class="form-group">
                                                     <label>Task Detail</label>
-                                                    <textarea class="form-control" required></textarea>
+                                                    <textarea class="form-control" th:field="*{taskDetail}"required></textarea>
                                                     <div class="invalid-feedback">Please enter task detail</div>
                                                 </div>
                                             </div>
